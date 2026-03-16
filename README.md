@@ -1,2 +1,2 @@
-# skintristic-internship
-Skintristic Internship
+# skinstric-internship
+Skinstric Internship
