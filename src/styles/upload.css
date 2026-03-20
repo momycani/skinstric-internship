@@ -1,7 +1,10 @@
 .upload-container {
   min-height: 100vh;  
+  height: 100vh;
   background: #fcfcfc;
   position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .upload-header {
@@ -39,11 +42,11 @@
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  font: 10px;
+  font-size: 10px;
 }
 
 .upload-top-label {
-  margin: 8px 0 8px 32px;
+  margin: 20px 0 0 32px;
   font-size: 14px;
   font-weight: 600;
   line-height: 16px;
@@ -53,14 +56,18 @@
 
 .upload-main {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 140px 80px 0;  
+  margin: 90px auto 0;  
+  gap: 120px;
+  width: min(100%, 1080px);
+  padding: 0 32px;
 }
 
 .upload-option {
   position: relative;
-  width: 420px;
+  width: 360px;
+  flex: 0 0 360px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -114,8 +121,8 @@
 
 .upload-rotating-stack {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,8 +130,8 @@
 
 .upload-frame {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   border: 2px dashed rgba(26, 27, 28, 0.12);
   transform-origin: center;
   animation: rotateClockwise 90s linear infinite;
@@ -168,24 +175,24 @@
 }
 
 .upload-callout--camera {
-  left: 210px;
-  top: 40px;
+  left: 180px;
+  top: 34px;
 }
 
 .upload-callout--camera .upload-callout__text {
-  left: 108px;
-  top: -15px;
+  left: 96px;
+  top: -12px;
   text-align: left;
 }
 
 .upload-callout--gallery {
-  left: 20px;
-  top: 200px;
+  left: 34px;
+  top: 174px;
 }
 
 .upload-callout--gallery .upload-callout__text {
-  left: -128px;
-  top: 80px;
+  left: -112px;
+  top: 72px;
   text-align: right;
 }
 
@@ -463,20 +470,17 @@
 
 .upload-preview {
   position: absolute;
-  top: 80px;
+  top: 110px;
   right: 32px;
   z-index: 10;
-}
-
-.upload-preview p {
   margin: 0 0 10px;
   font-size: 14px;
   color: #1a1b1c;
 }
 
 .upload-preview-box {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border: 1px solid #cfd3da;
   background: #fcfcfc;
   display: flex;
@@ -520,5 +524,262 @@
   }
   to {
     rotate: 360deg;
+  }
+}
+
+@media (max-width: 932px) {
+  .upload-container {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .upload-header {
+    padding: 20px 24px 12px;
+  }
+
+  .upload-top-label {
+    margin: 8px 0 8px 24px;
+    font-size: 13px;
+  }
+
+  .upload-header button {
+    padding: 8px 14px;
+    font-size: 9px;
+  }
+
+  .upload-main {
+    margin: 130px 24px 0;
+    align-items: center;
+    justify-content: center;
+    gap: 72px;
+  }
+
+  .upload-option {
+    width: 320px;
+    flex: 0 1 320px;
+  }
+
+  .upload-rotating-stack {
+    width: 260px;
+    height: 260px;
+  }
+
+  .upload-frame {
+    width: 240px;
+    height: 240px;
+  }
+
+  .upload-circle {
+    width: 96px;
+    height: 96px;
+  }
+
+  .upload-icon--camera {
+    width: 108px;
+    height: 108px;
+  }
+
+  .upload-icon--gallery {
+    width: 78px;
+    height: 78px;
+  }
+
+  .upload-callout__svg {
+    width: 82px;
+  }
+
+  .upload-callout__text {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .upload-callout--camera {
+    left: 150px;
+    top: 34px;
+  }
+
+  .upload-callout--camera .upload-callout__text {
+    left: 88px;
+    top: -10px;
+  }
+
+  .upload-callout--gallery {
+    left: 42px;
+    top: 160px;
+  }
+
+  .upload-callout--gallery .upload-callout__text {
+    left: -92px;
+    top: 64px;
+  }
+
+  .upload-preview {
+    top: 92px;
+    right: 24px;
+  }
+
+  .upload-preview p {
+    font-size: 13px;
+    margin: 0 0 8px;
+  }
+
+  .upload-preview-box {
+    width: 96px;
+    height: 96px;
+  }
+
+  .upload-back {
+    left: 24px;
+    bottom: 20px;
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .upload-back img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 640px) {
+  .upload-container {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 75px;
+  }
+
+  .upload-header {
+    padding: 16px;
+  }
+
+  .upload-brand {
+    gap: 12px;
+  }
+
+  .upload-logo {
+    font-size: 13px;
+  }
+
+  .upload-tag {
+    height: 14px;
+  }
+
+  .upload-header button {
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+
+  .upload-top-label {
+    margin: 8px 0 0 16px;
+    font-size: 12px;
+  }
+
+  .upload-main {
+    margin: 24px 16px 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0px;
+  }
+
+  .upload-option {
+    width: 100%;
+    max-width: 260px;
+    flex: 0 1 280px;
+  }
+
+  .upload-option + .upload-option {
+    margin-top: -10px;
+}
+
+  .upload-rotating-stack {
+    width: 200px;
+    height: 200px;
+  }
+
+  .upload-frame {
+    width: 182px;
+    height: 182px;
+  }
+
+  .upload-circle {
+    width: 84px;
+    height: 84px;
+  }
+
+  .upload-icon {
+    max-width: none;
+  }
+
+  .upload-icon--camera {
+    width: 90px;
+    height: 90px;
+  }
+
+  .upload-icon--gallery {
+    width: 58px;
+    height: 58px;
+  }
+
+  .upload-callout__svg {
+    width: 58px;
+  }
+
+  .upload-callout__text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
+  .upload-callout--camera {
+    left: 112px;
+    top: 20px;
+  }
+
+  .upload-callout--camera .upload-callout__text {
+    left: 62px;
+    top: -4px;
+    text-align-last: left;
+  }
+
+  .upload-callout--gallery {
+    left: 18px;
+    top: 120px;
+  }
+
+  .upload-callout--gallery .upload-callout__text {
+    left: -90px;
+    top: 42px;
+    text-align: right;
+  }
+
+  .upload-preview {
+    position: absolute;
+    top: 86px;
+    right: 16px;
+    margin: 0;
+    z-index: 10;
+}
+
+.upload-preview p {
+  margin: 0 0 6px;
+  font-size: 12px;
+}
+
+.upload-preview-box {
+  width: 84px;
+  height: 84px;
+}
+
+  .upload-back {
+    left: 16px;
+    bottom: 16px;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .upload-back img {
+    width: 38px;
+    height: 38px;
   }
 }

@@ -20,55 +20,84 @@ export default function IntroPage() {
             </header>
 
             <main className="intro-main">
-            <div className="intro-actions">
+
+            {/* Desktop layout */}
+            <div className="intro-desktop">
+                <div className="intro-actions">
                 <button className="intro-action intro-action--left" type="button">
-                <img
+                    <img
                     className="intro-action__frame"
                     src={rectangleLeft}
                     alt=""
                     aria-hidden="true"
-                />
-                <div className="intro-action__content intro-action__content--left">
+                    />
+                    <div className="intro-action__content intro-action__content--left">
                     <img
-                    className="intro-action__icon"
-                    src={buttonBoxLeft}
-                    alt=""
-                    aria-hidden="true"
+                        className="intro-action__icon"
+                        src={buttonBoxLeft}
+                        alt=""
+                        aria-hidden="true"
                     />
                     <span>DISCOVER A.I.</span>
-                </div>
+                    </div>
                 </button>
 
-                <button className="intro-action intro-action--right" type="button">
-                <img
+                <button
+                    className="intro-action intro-action--right"
+                    type="button"
+                    onClick={() => navigate("/analysis-intro")}
+                >
+                    <img
                     className="intro-action__frame"
                     src={rectangleRight}
                     alt=""
                     aria-hidden="true"
-                />
-                <div className="intro-action__content intro-action__content--right" onClick={() => navigate("/analysis")}>
+                    />
+                    <div className="intro-action__content intro-action__content--right">
                     <span>TAKE TEST</span>
                     <img
-                    className="intro-action__icon"
-                    src={buttonBoxRight}
-                    alt=""
-                    aria-hidden="true"
+                        className="intro-action__icon"
+                        src={buttonBoxRight}
+                        alt=""
+                        aria-hidden="true"
                     />
-                </div>
+                    </div>
                 </button>
-            </div>
+                </div>
 
-            <div className="intro-heading-wrap">
-                <h1>
-                Sophisticated skincare
-                </h1>
-            </div>
+                <div className="intro-heading-wrap">
+                <h1>Sophisticated skincare</h1>
+                </div>
 
-            <p className="intro-footer-text">
+                <p className="intro-footer-text">
                 SKINSTRIC DEVELOPED AN A.I. THAT CREATES A HIGHLY-PERSONALIZED ROUTINE
                 TAILORED TO WHAT YOUR SKIN NEEDS.
-            </p>
-            </main>
+                </p>
+            </div>
+
+            {/* 932 and below layout */}
+            <div className="intro-tablet">
+                <div className="intro-diamond">
+                <div className="intro-diamond__inner">
+                    <h1 className="intro-tablet__title">Sophisticated skincare</h1>
+
+                    <p className="intro-tablet__text">
+                    Skinstric developed an A.I. that creates a highly-personalized routine
+                    tailored to what your skin needs.
+                    </p>
+
+                    <button
+                    className="intro-tablet__cta"
+                    type="button"
+                    onClick={() => navigate("/analysis-intro")}
+                    >
+                    <span>ENTER EXPERIENCE</span>
+                    <img src={buttonBoxRight} alt="" aria-hidden="true" />
+                    </button>
+                </div>
+                </div>
+            </div>
+            </main>              
         </div>
     );
 }

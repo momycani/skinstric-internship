@@ -20,7 +20,7 @@ export default function UploadPage() {
   const [stream, setStream] = useState<MediaStream | null>(null);
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [, setAnalysisData] = useState<any>(null);
+  const [, setAnalysisData] = useState<string | null>(null);
 
   useEffect(() => {
   if (showCameraView && stream && videoRef.current) {

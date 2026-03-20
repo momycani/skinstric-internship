@@ -1,22 +1,22 @@
 @font-face {
-    font-family: "Roobert";
-    src: url("../assets/fonts/RoobertTRIAL-Light.woff2") format("woff2");
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Roobert";
+  src: url("../assets/fonts/RoobertTRIAL-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Roobert";
-    src: url("../assets/fonts/RoobertTRIAL-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Roobert";
+  src: url("../assets/fonts/RoobertTRIAL-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Roobert";
-    src: url("../assets/fonts/RoobertTRIAL-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Roobert";
+  src: url("../assets/fonts/RoobertTRIAL-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
 }
 
 :root {
@@ -24,7 +24,9 @@
   --bg: #f4f4f4;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -32,6 +34,8 @@ html,
 body,
 #root {
   margin: 0;
+  padding: 0;
+  width: 100%;
   min-height: 100%;
 }
 
@@ -39,4 +43,20 @@ body {
   font-family: "Roobert", sans-serif;
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
